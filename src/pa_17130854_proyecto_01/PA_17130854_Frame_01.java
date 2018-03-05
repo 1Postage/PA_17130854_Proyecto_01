@@ -5,6 +5,7 @@
  */
 package pa_17130854_proyecto_01;
 
+import java.util.Random;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -17,6 +18,8 @@ public class PA_17130854_Frame_01 extends javax.swing.JFrame {
     // Variables globales para el frame
     ArrayCuerpo cuerpos = new ArrayCuerpo();
     DefaultTableModel modelo;
+    String [] nombres = {"A-", "B-", "C-", "D-", "E-", "F-", "G-", "H-"};
+    
 
     ArrayCuerpo ejemplos = new ArrayCuerpo(3);
 
@@ -36,14 +39,6 @@ public class PA_17130854_Frame_01 extends javax.swing.JFrame {
         ejemplos.setValueAt(0, "C-25", 288000000, 8090734385.12284);
         ejemplos.setValueAt(1, "M-18", 250000000, 651389761.823614);
         ejemplos.setValueAt(2, "A-87", 295000000, 504661558.46743);
-        
-        // mandar mensaje con datos del proyecto
-        String str = "Nombre: José Antonio Zandate Luna\n"
-                + "No. Control: 17130854\n"
-                + "No. Proyecto: 1\n"
-                + "Descripción: Programa que calcula la masa de un cuerpo segun su velocidad y su energia relativista\n"
-                + "Acpetar para continuar...";
-        JOptionPane.showMessageDialog(null, str);
 
     }
 
@@ -74,6 +69,7 @@ public class PA_17130854_Frame_01 extends javax.swing.JFrame {
         bntEjemplo2 = new javax.swing.JButton();
         btnEjemplo3 = new javax.swing.JButton();
         jCheckIncrementar = new javax.swing.JCheckBox();
+        btnAleatorio = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jSpinnerNumElementos = new javax.swing.JSpinner();
@@ -90,6 +86,9 @@ public class PA_17130854_Frame_01 extends javax.swing.JFrame {
         btnOrdenVelocidad = new javax.swing.JButton();
         btnOrdenEnergia = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
+        jComboBOrden = new javax.swing.JComboBox<>();
+        jPanel4 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
         jLSumaMasa = new javax.swing.JLabel();
         jLPromVelocidad = new javax.swing.JLabel();
         jLTotalEnergia = new javax.swing.JLabel();
@@ -160,6 +159,13 @@ public class PA_17130854_Frame_01 extends javax.swing.JFrame {
 
         jCheckIncrementar.setText("Auto incrementar");
 
+        btnAleatorio.setText("Aleatorio");
+        btnAleatorio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAleatorioActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -194,7 +200,9 @@ public class PA_17130854_Frame_01 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jSpinnerUbicacionGrabar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnGrabar))
+                        .addComponent(btnGrabar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnAleatorio))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(42, 42, 42)
                         .addComponent(jLabel5)
@@ -202,7 +210,7 @@ public class PA_17130854_Frame_01 extends javax.swing.JFrame {
                         .addComponent(jLResultadoMasa, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jCheckIncrementar)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(269, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -218,7 +226,8 @@ public class PA_17130854_Frame_01 extends javax.swing.JFrame {
                     .addComponent(btnCalcularMasa)
                     .addComponent(jLabel8)
                     .addComponent(jSpinnerUbicacionGrabar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnGrabar))
+                    .addComponent(btnGrabar)
+                    .addComponent(btnAleatorio))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -308,6 +317,32 @@ public class PA_17130854_Frame_01 extends javax.swing.JFrame {
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pa_17130854_proyecto_01/Captura.jpg"))); // NOI18N
 
+        jComboBOrden.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Descendente\t", "Ascendete" }));
+
+        jButton1.setText("Informacion del proeycto");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton1)
+                .addContainerGap(151, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -315,20 +350,28 @@ public class PA_17130854_Frame_01 extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel10)
-                        .addComponent(btnOrdenAlfabetico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnOrdenMasa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnOrdenEnergia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnOrdenVelocidad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jLabel11))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel10)
+                            .addComponent(btnOrdenAlfabetico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnOrdenMasa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnOrdenEnergia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnOrdenVelocidad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jComboBOrden, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel10)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(jComboBOrden, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnOrdenAlfabetico)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -338,7 +381,9 @@ public class PA_17130854_Frame_01 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnOrdenEnergia)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel11)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel11)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
@@ -379,8 +424,7 @@ public class PA_17130854_Frame_01 extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jLTotalEnergia, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -429,7 +473,8 @@ public class PA_17130854_Frame_01 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -489,7 +534,7 @@ public class PA_17130854_Frame_01 extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEjemplo3MouseClicked
 
     private void btnGrabarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGrabarMouseClicked
-        
+
         // leer datos de los text fields
         Cuerpo cuerpo = leerDatos();
         int posicion = (int) jSpinnerUbicacionGrabar.getValue() - 1;
@@ -507,36 +552,69 @@ public class PA_17130854_Frame_01 extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEditarMouseClicked
 
     private void btnOrdenAlfabeticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenAlfabeticoActionPerformed
-        cuerpos.ordenarAlfabetico();
+        if (jComboBOrden.getSelectedIndex() == 0) {
+            cuerpos.ordenarAlfabetico();
+        }
         mostrar();
     }//GEN-LAST:event_btnOrdenAlfabeticoActionPerformed
 
     private void btnOrdenMasaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenMasaActionPerformed
-        cuerpos.ordenarMasa();
+        if (jComboBOrden.getSelectedIndex() == 0) {
+            cuerpos.ordenarMasa();
+        }else if ( jComboBOrden.getSelectedIndex() == 1) {
+            cuerpos.ordenarMasaDesc();
+        }
         mostrar();
     }//GEN-LAST:event_btnOrdenMasaActionPerformed
 
     private void btnOrdenVelocidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenVelocidadActionPerformed
-        cuerpos.ordenVelocidad();
+        if (jComboBOrden.getSelectedIndex() == 0) {
+            cuerpos.ordenVelocidad();
+        }else if ( jComboBOrden.getSelectedIndex() == 1) {
+            cuerpos.ordenVelocidadDesc();
+        }
         mostrar();
     }//GEN-LAST:event_btnOrdenVelocidadActionPerformed
 
     private void btnOrdenEnergiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenEnergiaActionPerformed
-        cuerpos.ordenEnergia();
+        if (jComboBOrden.getSelectedIndex() == 0) {
+            cuerpos.ordenEnergia();
+        }else if ( jComboBOrden.getSelectedIndex() == 1) {
+            cuerpos.ordenEnergiaDesc();
+        }
         mostrar();
     }//GEN-LAST:event_btnOrdenEnergiaActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // mandar mensaje con datos del proyecto
+        String str = "Nombre: José Antonio Zandate Luna\n"
+                + "No. Control: 17130854\n"
+                + "No. Proyecto: 1\n"
+                + "Descripción: Programa que calcula la masa de un cuerpo segun su velocidad y su energia relativista\n"
+                + "Acpetar para continuar...";
+        JOptionPane.showMessageDialog(null, str);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btnAleatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAleatorioActionPerformed
+        // TODO add your handling code here:
+        Random r = new Random();
+        jtfNombre.setText(nombres[r.nextInt(nombres.length)] + r.nextInt(10));
+        jtfVelocidad.setText(""+r.nextInt(10000)*10000);
+        jtfEnergia.setText(""+r.nextInt(10000)*100000);
+    }//GEN-LAST:event_btnAleatorioActionPerformed
 
     // operaciones comunes en el frame
     private void mostrar() {
         double sumaMasa = 0, sumaVelocidad = 0, sumaEnergia = 0;
-        
-        
+
         if (cuerpos.isEmpty()) {
             return;
         }
+        int n = 0;
         for (int r = 0; r < cuerpos.getTamaño(); r++) {
             Cuerpo c = cuerpos.getCuerpoAt(r);
             if (c != null) {
+                n++;
                 jTableDatos.setValueAt(c.getNombre(), r, 0);
                 jTableDatos.setValueAt(String.format("%.9f", c.calcularMasa()), r, 1);
                 jTableDatos.setValueAt(String.format("%f", c.getVelocidad()), r, 2);
@@ -547,9 +625,9 @@ public class PA_17130854_Frame_01 extends javax.swing.JFrame {
                 sumaEnergia += c.getEnergia();
             }
         }
-        
+
         jLSumaMasa.setText("" + String.format("%.9f", sumaMasa));
-        jLPromVelocidad.setText("" + (String.format("%f", (sumaVelocidad/ cuerpos.getTamaño()))));
+        jLPromVelocidad.setText("" + (String.format("%f", (sumaVelocidad / n))));
         jLTotalEnergia.setText("" + String.format("%f", sumaEnergia));
     }
 
@@ -571,11 +649,12 @@ public class PA_17130854_Frame_01 extends javax.swing.JFrame {
     private void putDatos() {
         int posicion = (int) jSpinnerEditar.getValue() - 1;
         jSpinnerUbicacionGrabar.setValue(posicion + 1);
-        
+
         // salir si no existe el dato en la posicion
-        if(cuerpos.getCuerpoAt(posicion) == null) return;
-        
-        
+        if (cuerpos.getCuerpoAt(posicion) == null) {
+            return;
+        }
+
         Cuerpo datos = cuerpos.getCuerpoAt(posicion);
         jCheckIncrementar.setSelected(false);
 
@@ -585,7 +664,7 @@ public class PA_17130854_Frame_01 extends javax.swing.JFrame {
     }
 
     public static void main(String args[]) {
-        
+
 
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -619,6 +698,7 @@ public class PA_17130854_Frame_01 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bntEjemplo2;
+    private javax.swing.JButton btnAleatorio;
     private javax.swing.JButton btnCalcularMasa;
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnEjemplo1;
@@ -628,7 +708,9 @@ public class PA_17130854_Frame_01 extends javax.swing.JFrame {
     private javax.swing.JButton btnOrdenEnergia;
     private javax.swing.JButton btnOrdenMasa;
     private javax.swing.JButton btnOrdenVelocidad;
+    private javax.swing.JButton jButton1;
     private javax.swing.JCheckBox jCheckIncrementar;
+    private javax.swing.JComboBox<String> jComboBOrden;
     private javax.swing.JLabel jLPromVelocidad;
     private javax.swing.JLabel jLResultadoMasa;
     private javax.swing.JLabel jLSumaMasa;
@@ -647,6 +729,7 @@ public class PA_17130854_Frame_01 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSpinner jSpinnerEditar;
     private javax.swing.JSpinner jSpinnerNumElementos;

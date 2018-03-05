@@ -34,12 +34,14 @@ class ArrayCuerpo {
         if (tamaño > cuerpos.length) {
             // copiar datos al nuevo arreglo si se expande
             for (int i = 0; i < cuerpos.length; i++) {
-                nuevoTamaño[i] = cuerpos[i];
+                if(cuerpos[i]!= null)
+                    nuevoTamaño[i] = cuerpos[i];
             }
          
         }else if( tamaño < cuerpos.length) { // el tamaño decrece
             for (int i = 0; i < tamaño; i++) {
-                nuevoTamaño[i] = cuerpos[i];
+                if(cuerpos[i]!= null)
+                    nuevoTamaño[i] = cuerpos[i];
             }
         }else {
             // salir si no cambia el tamaño
@@ -48,7 +50,6 @@ class ArrayCuerpo {
 
         // copiar el nuevo arreglo a la variable principal
         cuerpos = nuevoTamaño.clone();
-
     }
 
     // añadir un cuerpo al primer espacio vacio del arreglo
@@ -97,8 +98,30 @@ class ArrayCuerpo {
         }
         return false;
     }
+    
+    public Cuerpo mayorMasa() {
+        Cuerpo cuerpoMayorMasa = new Cuerpo();
+        for (int i = 0; i < cuerpos.length; i++) {
+            if(cuerpos[i].calcularMasa()> cuerpoMayorMasa.calcularMasa()) 
+            {
+                cuerpoMayorMasa = cuerpos[i];
+            }
+        }
+        return cuerpoMayorMasa;
+    }
+    
+     public Cuerpo menorMasa() {
+        Cuerpo cuerpoMenorMasa = cuerpos[0];
+        for (int i = 0; i < cuerpos.length; i++) {
+            if(cuerpos[i].calcularMasa()> cuerpoMenorMasa.calcularMasa()) 
+            {
+                cuerpoMenorMasa = cuerpos[i];
+            }
+        }
+        return cuerpoMenorMasa;
+    }
 
-    // ordenamientos de forma ascendente
+    // ordenamientos de forma ascendente 
     public void ordenEnergia() {
         
         for (int i = 0; i < cuerpos.length -1 ; i++) {
@@ -135,10 +158,11 @@ class ArrayCuerpo {
             }
         }
     }
-
+    
     public void ordenarAlfabetico() {
         for (int i = 0; i < cuerpos.length -1 ; i++) {
             for (int j = i + 1; j < cuerpos.length; j++) {
+                if(cuerpos[i]!= null && cuerpos[j] != null)
                 if (cuerpos[i].getNombre().compareTo(cuerpos[j].getNombre()) > 0) {
                     Cuerpo aux = cuerpos[i];
                     cuerpos[i] = cuerpos[j];
@@ -147,6 +171,46 @@ class ArrayCuerpo {
             }
         }
     }
+    
+    // ordenamientos de forma descendente 
+    public void ordenEnergiaDesc() {
+        
+        for (int i = 0; i < cuerpos.length -1 ; i++) {
+            for (int j = i + 1; j < cuerpos.length; j++) {
+                if (cuerpos[i].getEnergia() > cuerpos[j].getEnergia()) {
+                    Cuerpo aux = cuerpos[i];
+                    cuerpos[i] = cuerpos[j];
+                    cuerpos[j] = aux;
+                }
+            }
+        }
+    }
+
+    public void ordenVelocidadDesc() {
+        for (int i = 0; i < cuerpos.length -1 ; i++) {
+            for (int j = i + 1; j < cuerpos.length; j++) {
+                if (cuerpos[i].getVelocidad() > cuerpos[j].getVelocidad()) {
+                    Cuerpo aux = cuerpos[i];
+                    cuerpos[i] = cuerpos[j];
+                    cuerpos[j] = aux;
+                }
+            }
+        }
+    }
+
+    public void ordenarMasaDesc() {
+        for (int i = 0; i < cuerpos.length -1 ; i++) {
+            for (int j = i + 1; j < cuerpos.length; j++) {
+                if (cuerpos[i].getMasa() > cuerpos[j].getMasa()) {
+                    Cuerpo aux = cuerpos[i];
+                    cuerpos[i] = cuerpos[j];
+                    cuerpos[j] = aux;
+                }
+            }
+        }
+    }
+
+    
 
     public void ordenOriginal() {
         this.cuerpos = original.clone();
