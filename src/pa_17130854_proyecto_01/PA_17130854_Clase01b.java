@@ -11,7 +11,7 @@ package pa_17130854_proyecto_01;
  */
 class ArrayCuerpo {
 
-    Cuerpo[] cuerpos, original;
+    private Cuerpo[] cuerpos;
 
     public ArrayCuerpo() {
         cuerpos = new Cuerpo[0];
@@ -113,7 +113,7 @@ class ArrayCuerpo {
      public Cuerpo menorMasa() {
         Cuerpo cuerpoMenorMasa = cuerpos[0];
         for (int i = 0; i < cuerpos.length; i++) {
-            if(cuerpos[i].calcularMasa()> cuerpoMenorMasa.calcularMasa()) 
+            if(cuerpos[i].calcularMasa() < cuerpoMenorMasa.calcularMasa()) 
             {
                 cuerpoMenorMasa = cuerpos[i];
             }
@@ -173,6 +173,21 @@ class ArrayCuerpo {
     }
     
     // ordenamientos de forma descendente 
+    
+    public void ordenarAlfabeticoDesc() {
+        for (int i = 0; i < cuerpos.length -1 ; i++) {
+            for (int j = i + 1; j < cuerpos.length; j++) {
+                if(cuerpos[i]!= null && cuerpos[j] != null)
+                if (cuerpos[i].getNombre().compareTo(cuerpos[j].getNombre()) < 0) {
+                    Cuerpo aux = cuerpos[i];
+                    cuerpos[i] = cuerpos[j];
+                    cuerpos[j] = aux;
+                }
+            }
+        }
+    }
+    
+    
     public void ordenEnergiaDesc() {
         
         for (int i = 0; i < cuerpos.length -1 ; i++) {
@@ -211,10 +226,6 @@ class ArrayCuerpo {
     }
 
     
-
-    public void ordenOriginal() {
-        this.cuerpos = original.clone();
-    }
 
     public String toString() {
         String str = "";

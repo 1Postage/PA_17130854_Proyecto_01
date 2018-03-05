@@ -35,18 +35,7 @@ class Cuerpo {
         calcularMasa();
     }
     
-    // cálculo de energia relativa
-    public double energiaRelativa() {
-        // calculo de masa por velocidad de la luz al cuadrado
-        double numerador    = this.masa * Math.pow(c, 2);
-        
-        // calculo del denomidador
-        double denominador  = Math.sqrt( 1 - (Math.pow(this.velocidad, 2) / Math.pow(c, 2)) );
-        
-        return (numerador / denominador);
-    }
-    
-    // calculo de la velocidad con energia y masa
+    // calculo de la masa con energia y velocidad
     public double calcularMasa() {
         double numerador = this.energia * Math.sqrt(1 - (Math.pow(this.velocidad, 2) / Math.pow(this.c, 2)));
         masa = (numerador / Math.pow(this.c, 2) );

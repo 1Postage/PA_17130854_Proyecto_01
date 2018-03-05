@@ -49,7 +49,7 @@
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="49" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -78,7 +78,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
@@ -90,7 +90,7 @@
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <Component id="btnEjemplo1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="bntEjemplo2" min="-2" max="-2" attributes="0"/>
@@ -98,13 +98,23 @@
                           <Component id="btnEjemplo3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
                           <Component id="jtfEnergia" min="-2" pref="74" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="btnCalcularMasa" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLResultadoMasa" min="-2" pref="114" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
                           <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jSpinnerUbicacionGrabar" min="-2" pref="40" max="-2" attributes="0"/>
@@ -113,16 +123,9 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="btnAleatorio" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                          <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLResultadoMasa" min="-2" pref="114" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jCheckIncrementar" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="jCheckIncrementar" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="269" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -144,17 +147,15 @@
                       <Component id="btnAleatorio" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLResultadoMasa" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                      <Group type="103" alignment="3" groupAlignment="3" attributes="0">
                           <Component id="btnEjemplo1" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="bntEjemplo2" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnEjemplo3" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                          <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLResultadoMasa" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="jCheckIncrementar" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jCheckIncrementar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -322,7 +323,7 @@
                               <Component id="jLSumaMasa" alignment="1" min="-2" pref="23" max="-2" attributes="0"/>
                               <Component id="jLPromVelocidad" max="32767" attributes="0"/>
                               <Component id="jLTotalEnergia" max="32767" attributes="0"/>
-                              <Component id="jLabel9" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Component id="jPanel3" max="32767" attributes="0"/>
@@ -430,16 +431,37 @@
                                   <Component id="btnOrdenEnergia" alignment="0" max="32767" attributes="0"/>
                                   <Component id="btnOrdenVelocidad" alignment="0" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jComboBOrden" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="jComboBOrden" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="124" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="jLMenorMasa" max="32767" attributes="0"/>
+                                          </Group>
+                                          <Component id="jLabel14" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="btnMayorMasa" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="jLMayorMasa" min="-2" pref="107" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
+                              <Component id="jPanel4" max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -452,11 +474,22 @@
                           <Component id="jComboBOrden" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnOrdenAlfabetico" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btnOrdenAlfabetico" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnOrdenMasa" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btnOrdenMasa" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnMayorMasa" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLMayorMasa" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnOrdenVelocidad" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btnOrdenVelocidad" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLMenorMasa" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnOrdenEnergia" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -543,8 +576,8 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="151" max="32767" attributes="0"/>
+                          <Component id="jButton1" min="-2" pref="39" max="-2" attributes="0"/>
+                          <EmptySpace pref="135" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -552,7 +585,10 @@
               <SubComponents>
                 <Component class="javax.swing.JButton" name="jButton1">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Informacion del proeycto"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Consolas" size="14" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Informaci&#xf3;n del proyecto"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
@@ -560,6 +596,43 @@
                 </Component>
               </SubComponents>
             </Container>
+            <Component class="javax.swing.JButton" name="btnMayorMasa">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Mayor"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMayorMasaActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Menor"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLMayorMasa">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="cc" red="ff" type="rgb"/>
+                </Property>
+                <Property name="opaque" type="boolean" value="true"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLMenorMasa">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="cc" red="ff" type="rgb"/>
+                </Property>
+                <Property name="opaque" type="boolean" value="true"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel14">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Mayor/menor masa:"/>
+              </Properties>
+            </Component>
           </SubComponents>
         </Container>
         <Component class="javax.swing.JLabel" name="jLSumaMasa">

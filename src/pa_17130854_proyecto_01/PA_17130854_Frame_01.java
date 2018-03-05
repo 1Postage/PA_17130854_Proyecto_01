@@ -89,6 +89,11 @@ public class PA_17130854_Frame_01 extends javax.swing.JFrame {
         jComboBOrden = new javax.swing.JComboBox<>();
         jPanel4 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
+        btnMayorMasa = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jLMayorMasa = new javax.swing.JLabel();
+        jLMenorMasa = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
         jLSumaMasa = new javax.swing.JLabel();
         jLPromVelocidad = new javax.swing.JLabel();
         jLTotalEnergia = new javax.swing.JLabel();
@@ -172,7 +177,7 @@ public class PA_17130854_Frame_01 extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -189,13 +194,20 @@ public class PA_17130854_Frame_01 extends javax.swing.JFrame {
                         .addComponent(bntEjemplo2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnEjemplo3)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jtfEnergia, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnCalcularMasa)
-                        .addGap(26, 26, 26)
+                        .addGap(59, 59, 59))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLResultadoMasa, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(44, 44, 44)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jSpinnerUbicacionGrabar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -203,14 +215,8 @@ public class PA_17130854_Frame_01 extends javax.swing.JFrame {
                         .addComponent(btnGrabar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnAleatorio))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLResultadoMasa, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jCheckIncrementar)))
-                .addContainerGap(269, Short.MAX_VALUE))
+                    .addComponent(jCheckIncrementar))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -229,14 +235,13 @@ public class PA_17130854_Frame_01 extends javax.swing.JFrame {
                     .addComponent(btnGrabar)
                     .addComponent(btnAleatorio))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jLResultadoMasa, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnEjemplo1)
                         .addComponent(bntEjemplo2)
                         .addComponent(btnEjemplo3))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel5)
-                        .addComponent(jLResultadoMasa, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jCheckIncrementar)))
         );
 
@@ -319,7 +324,8 @@ public class PA_17130854_Frame_01 extends javax.swing.JFrame {
 
         jComboBOrden.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Descendente\t", "Ascendete" }));
 
-        jButton1.setText("Informacion del proeycto");
+        jButton1.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        jButton1.setText("Información del proyecto");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -339,9 +345,31 @@ public class PA_17130854_Frame_01 extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1)
-                .addContainerGap(151, Short.MAX_VALUE))
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(135, Short.MAX_VALUE))
         );
+
+        btnMayorMasa.setText("Mayor");
+        btnMayorMasa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMayorMasaActionPerformed(evt);
+            }
+        });
+
+        jButton3.setText("Menor");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jLMayorMasa.setBackground(new java.awt.Color(255, 204, 204));
+        jLMayorMasa.setOpaque(true);
+
+        jLMenorMasa.setBackground(new java.awt.Color(255, 204, 204));
+        jLMenorMasa.setOpaque(true);
+
+        jLabel14.setText("Mayor/menor masa:");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -357,13 +385,28 @@ public class PA_17130854_Frame_01 extends javax.swing.JFrame {
                             .addComponent(btnOrdenMasa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnOrdenEnergia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnOrdenVelocidad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jComboBOrden, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jComboBOrden, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(124, 124, 124)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addComponent(jButton3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLMenorMasa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(jLabel14)
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addComponent(btnMayorMasa)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLMayorMasa, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -373,11 +416,19 @@ public class PA_17130854_Frame_01 extends javax.swing.JFrame {
                     .addComponent(jLabel10)
                     .addComponent(jComboBOrden, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnOrdenAlfabetico)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnOrdenAlfabetico)
+                    .addComponent(jLabel14))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnOrdenMasa)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnOrdenMasa)
+                    .addComponent(btnMayorMasa)
+                    .addComponent(jLMayorMasa, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnOrdenVelocidad)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnOrdenVelocidad)
+                    .addComponent(jButton3)
+                    .addComponent(jLMenorMasa, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnOrdenEnergia)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -445,7 +496,7 @@ public class PA_17130854_Frame_01 extends javax.swing.JFrame {
                             .addComponent(jLSumaMasa, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLPromVelocidad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLTotalEnergia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel9)))
+                            .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING)))
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -474,7 +525,7 @@ public class PA_17130854_Frame_01 extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         pack();
@@ -554,6 +605,8 @@ public class PA_17130854_Frame_01 extends javax.swing.JFrame {
     private void btnOrdenAlfabeticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenAlfabeticoActionPerformed
         if (jComboBOrden.getSelectedIndex() == 0) {
             cuerpos.ordenarAlfabetico();
+        }else if(jComboBOrden.getSelectedIndex() == 1){
+            cuerpos.ordenarAlfabeticoDesc();
         }
         mostrar();
     }//GEN-LAST:event_btnOrdenAlfabeticoActionPerformed
@@ -590,8 +643,7 @@ public class PA_17130854_Frame_01 extends javax.swing.JFrame {
         String str = "Nombre: José Antonio Zandate Luna\n"
                 + "No. Control: 17130854\n"
                 + "No. Proyecto: 1\n"
-                + "Descripción: Programa que calcula la masa de un cuerpo segun su velocidad y su energia relativista\n"
-                + "Acpetar para continuar...";
+                + "Descripción: Programa que calcula la masa de un cuerpo segun su velocidad y su energia relativista\n";
         JOptionPane.showMessageDialog(null, str);
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -602,6 +654,16 @@ public class PA_17130854_Frame_01 extends javax.swing.JFrame {
         jtfVelocidad.setText(""+r.nextInt(10000)*10000);
         jtfEnergia.setText(""+r.nextInt(10000)*100000);
     }//GEN-LAST:event_btnAleatorioActionPerformed
+
+    private void btnMayorMasaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMayorMasaActionPerformed
+        // TODO add your handling code here:
+        jLMayorMasa.setText(cuerpos.mayorMasa().getNombre());
+    }//GEN-LAST:event_btnMayorMasaActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        jLMenorMasa.setText(cuerpos.menorMasa().getNombre());
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     // operaciones comunes en el frame
     private void mostrar() {
@@ -704,13 +766,17 @@ public class PA_17130854_Frame_01 extends javax.swing.JFrame {
     private javax.swing.JButton btnEjemplo1;
     private javax.swing.JButton btnEjemplo3;
     private javax.swing.JButton btnGrabar;
+    private javax.swing.JButton btnMayorMasa;
     private javax.swing.JButton btnOrdenAlfabetico;
     private javax.swing.JButton btnOrdenEnergia;
     private javax.swing.JButton btnOrdenMasa;
     private javax.swing.JButton btnOrdenVelocidad;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton3;
     private javax.swing.JCheckBox jCheckIncrementar;
     private javax.swing.JComboBox<String> jComboBOrden;
+    private javax.swing.JLabel jLMayorMasa;
+    private javax.swing.JLabel jLMenorMasa;
     private javax.swing.JLabel jLPromVelocidad;
     private javax.swing.JLabel jLResultadoMasa;
     private javax.swing.JLabel jLSumaMasa;
@@ -718,6 +784,7 @@ public class PA_17130854_Frame_01 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
